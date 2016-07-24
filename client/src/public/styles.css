@@ -1,0 +1,24 @@
+.finished {
+  text-decoration: line-through;
+}
+
+.todo-item {
+  margin: 10px;
+  position: relative;
+}
+
+.todo-text {
+  margin-right: 10px;
+}
+
+.todo-list {
+  padding-left: 0px;
+  display: list-item;
+  width: 25%;
+}
+
+.todo-mark {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
