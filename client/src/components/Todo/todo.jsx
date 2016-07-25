@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classNames";
+import classnames from "classNames";
 
 export default class Todo extends React.Component {
   render() {
@@ -11,7 +11,7 @@ export default class Todo extends React.Component {
     }
     return (
       <li className="todo-item">
-        <div className={classNames("todo-text", {"finished": this.props.todo.finished})} >
+        <div className={classnames("todo-text", {"finished": this.props.todo.finished})} >
           {this.props.todo.text}
         </div>
         {build}
