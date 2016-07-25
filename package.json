@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "test": "jest --watch --onlyChange",
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "postinstall": "npm build"
   },
   "author": "",
   "license": "ISC",
