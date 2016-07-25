@@ -1,1 +1,1 @@
-web: ./commands.sh
+web: npm start
