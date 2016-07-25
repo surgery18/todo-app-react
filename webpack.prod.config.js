@@ -7,26 +7,40 @@ var
 	APP_DIR = path.join(__dirname, "client/src");
 
 var config = {
-	devtool: "eval",
+	devtool: "source-map",
 	entry: [
-		"webpack-dev-server/client?http://localhost:3000/", // WebpackDevServer host and port
-		"webpack/hot/only-dev-server", // "only" prevents reload on syntax errors
 		APP_DIR + "/public/index.jsx"
 	],
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
+		new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
 	],
 	output: {
 		path: BUILD_DIR,
 		filename: "bundle.js",
-		publicPath: "/static/",
+		publicPath: "/public/",
 	},
 	module: {
 		loaders: [{
 			test: /\.jsx?/,
 			include: APP_DIR,
 			loaders: ["react-hot", "babel"],
-		}]
+		},
+		{
+			test: /\.scss?/,
+	    loader: 'style!css!sass',
+	    include: APP_DIR
+		}
 	},
 	externals: {
 	  'react/addons': true,

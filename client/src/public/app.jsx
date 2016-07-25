@@ -2,6 +2,7 @@ import React from "react";
 import TodoList from "../compositions/TodoList/TodoList.jsx";
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import './styles.scss';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
