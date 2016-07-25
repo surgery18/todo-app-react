@@ -31,16 +31,18 @@ var config = {
 		publicPath: "/public/",
 	},
 	module: {
-		loaders: [{
+		loaders: [
+		{
 			test: /\.jsx?/,
 			include: APP_DIR,
-			loaders: ["react-hot", "babel"],
+			loader: "babel",
 		},
 		{
 			test: /\.scss?/,
 	    loader: 'style!css!sass',
-	    include: APP_DIR
+	    include: APP_DIR,
 		}
+		]
 	},
 	externals: {
 	  'react/addons': true,
